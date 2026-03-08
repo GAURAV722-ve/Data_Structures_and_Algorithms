@@ -8,13 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-<<<<<<< HEAD
-      "cwd": "d:/Data_Structures_and_Algorithms/Array",
-      "program": "d:/Data_Structures_and_Algorithms/Array/build/Debug/outDebug",
-=======
-      "cwd": "c:/Users/Gaurav Singh/OneDrive/Attachments/DSA_PRACITES/c_DSA",
-      "program": "c:/Users/Gaurav Singh/OneDrive/Attachments/DSA_PRACITES/c_DSA/build/Debug/outDebug",
->>>>>>> 6fb8bbb4f4ab48f837e8be8c429c6e47895cf90a
+      "cwd": "d:/DSA_PRACITES/Pattern",
+      "program": "d:/DSA_PRACITES/Pattern/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
