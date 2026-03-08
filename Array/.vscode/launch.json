@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+<<<<<<< HEAD
+      "cwd": "d:/Data_Structures_and_Algorithms/Array",
+      "program": "d:/Data_Structures_and_Algorithms/Array/build/Debug/outDebug",
+=======
+      "cwd": "c:/Users/Gaurav Singh/OneDrive/Attachments/DSA_PRACITES/c_DSA",
+      "program": "c:/Users/Gaurav Singh/OneDrive/Attachments/DSA_PRACITES/c_DSA/build/Debug/outDebug",
+>>>>>>> 6fb8bbb4f4ab48f837e8be8c429c6e47895cf90a
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
