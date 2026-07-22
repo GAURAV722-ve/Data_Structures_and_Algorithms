@@ -1,0 +1,34 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+    int peakIndexInMountainArray(vector<int>& arr) {
+        int s = 1, e = arr.size() - 2;
+
+        while (s <= e) {
+            int mid = s + (e - s) / 2;
+
+            if (arr[mid] > arr[mid - 1] && arr[mid] > arr[mid + 1]) {
+                return mid;
+            }
+            else if (arr[mid] > arr[mid - 1]) {
+                s = mid + 1;
+            }
+            else {
+                e = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+int main() {
+    vector<int> arr = {1,2,3,4,9,5,6};
+    int n = arr.size();
+
+    int x = peakIndexInMountainArray(arr);
+
+    cout << "Peak Element index value : " << x;
+    cout<<" Peak element value is : "<<arr[x];
+    return 0;
+}
