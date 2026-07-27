@@ -23,7 +23,7 @@ int getDistance(vector<int> &arr, int n, int c){
     sort(arr.begin(), arr.end());  //n * log(n)
     int st = 1, end = arr[n-1]-arr[0], ans = -1;
 
-    while(st<=end){  //O(log(range)*n)
+    while(st<=end){  //O(n*log(range))
         int mid = st+ (end-st)/2;
         if(isPossible(arr, n, c, mid)){
             ans=mid;
