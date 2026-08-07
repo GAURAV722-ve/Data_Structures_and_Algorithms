@@ -10,6 +10,7 @@ bool isArmstrong(int n){
         n/=10;
         digites++;
     }
+    n==o;
     while(n>0){
         int digit=n%10;
         sum += pow(digit,digites);
