@@ -5,6 +5,10 @@ int main(){
     string str;
     cin>>str;
     int x = str.size();
+    if(x%2!=0){
+        cout<<"No";
+        return 0;
+    }
     bool a=0,b=0;
     for(int i=0; i<x; i++){
         if(str[i]=='&'){
@@ -14,7 +18,7 @@ int main(){
             b=1;
         }
     }
-    if(x%2==0 && a && b){
+    if(a && b){
         cout<<"Yes";
     }else{
         cout<<"No";
