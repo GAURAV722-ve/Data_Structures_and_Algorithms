@@ -1,14 +1,40 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
 using namespace std;
 
-int main(){
-    vector<int> arr = {1,2,3,4,9,5,6};
-    int n = arr.size();
+int linearSearch(int arr[], int n, int x, int index = 0){
     
-    for(int i=1; i<n-1; i++){
-        if(arr[i]>arr[i-1] && arr[i]>arr[i+1]){
-            cout<<"Peak Element is : "<<arr[i]<<endl;
-        }
+    if (index == n)
+    {
+        return -1;
     }
+    if (arr[index] == x)
+    {
+        return index;
+    }
+
+    return linearSearch(arr, n, x, index + 1);
+}
+
+int main(){
+
+    int arr[] = {1, 5, 3, 2, 6, 89, 1, 79, 0, 46};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int x;
+    cout << "Enter the element: ";
+    cin >> x;
+
+    int result = linearSearch(arr, n, x);
+
+    if (result != -1)
+    {
+        cout << "Element is present in the array at index: " << result;
+    }
+    else
+    {
+        cout << "Element is not present in the array.";
+    }
+
+    return 0;
+
 }

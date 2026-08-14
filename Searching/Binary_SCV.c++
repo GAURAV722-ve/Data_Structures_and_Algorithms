@@ -1,32 +1,46 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
 using namespace std;
 
-int binary_sc(vector<int> arr, int tar){
-    int st=0, end = arr.size()-1;
-    while(st<=end){
-        int mid = st + (end-st)/2;
-        if(arr[mid]<tar){
-            st=mid+1;
-        }else if(arr[mid]>tar){
-            end = mid-1;
-        }else{
-            return mid;
-        }
-    }
-    return -1;
+// Recursive Binary Search Function
+int binarySearch(int arr[], int low, int high, int key)
+{
+    if (low > high)
+        return -1;
+
+    int mid = low + (high - low) / 2;
+
+    if (arr[mid] == key)
+        return mid;
+    else if (key < arr[mid])
+        return binarySearch(arr, low, mid - 1, key);
+    else
+        return binarySearch(arr, mid + 1, high, key);
 }
 
-int main(){
-    vector<int> arr = {-1,0,3,4,5,9,12};
-    int tar;
-    cout<<"Enter target : ";
-    cin>>tar;
-    int idx = binary_sc(arr, tar);
+int main()
+{
+    int n, key;
 
-    if(idx!=-1){
-        cout<<"Target : "<<tar<<" Index : "<<idx;
-    }else{
-        cout<<"Target not found.";
+    cout << "Enter the number of elements: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter the sorted array elements: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
     }
+
+    cout << "Enter the element to search: ";
+    cin >> key;
+
+    int result = binarySearch(arr, 0, n - 1, key);
+
+    if (result != -1)
+        cout << "Element found at index " << result << endl;
+    else
+        cout << "Element not found." << endl;
+
+    return 0;
 }

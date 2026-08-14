@@ -2,9 +2,9 @@
 using namespace std;
 
 void insertion_sort(int arr[], int n){
-    for(int i=0; i<n; i++){
+    for(int i=1; i<n; i++){
         int curr = arr[i];
-        int prev = i-1;
+        int prev = i-1;  
         while((arr[prev]>curr) && prev>=0){
             arr[prev+1] = arr[prev];
             prev--;

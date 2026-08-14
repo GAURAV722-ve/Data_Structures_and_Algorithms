@@ -6,7 +6,7 @@ int max_water(vector<int> vec){
     int area = 0, mw=0;
     for(int i=0; i< vec.size(); i++){
         for(int j=i+1; j<vec.size(); j++){
-            int w = vec[j]-vec[i], h=0;
+            int w = j-i, h=0;
             h = min(vec[i], vec[j]);
             area = h*w;
             mw=max(mw,area);
