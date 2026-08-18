@@ -14,8 +14,11 @@ int main() {
         cin >> vec[i];
     }
 
-    cout<< find(vec.begin(), vec.end(),4) - vec.begin();
-
+    if (find(vec.begin(), vec.end(), 4) != vec.end()) {
+        cout << "Yes";
+    } else {
+        cout << "No";
+    }
 
     return 0;
 }
