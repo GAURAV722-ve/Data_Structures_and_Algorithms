@@ -1,54 +1,39 @@
-#include <stdio.h>
+#include<iostream>
+#include<vector>
+using namespace std;
 
-void quickSort(int arr[], int low, int high);
-int partition(int arr[], int low, int high);
-void swap(int *a, int *b);
-
-int main() {
-    int arr[100], n, i;
-
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-
-    printf("Enter %d elements:\n", n);
-    for(i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
-
-    quickSort(arr, 0, n - 1);
-
-    printf("Sorted array:\n");
-    for(i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-
-    return 0;
-}
-
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-int partition(int arr[], int low, int high) {
-    int pivot = arr[high];
-    int i = low - 1;
-
-    for(int j = low; j < high; j++) {
-        if(arr[j] < pivot) {
-            i++;
-            swap(&arr[i], &arr[j]);
+int partition(vector<int>& arr, int st, int end){
+    int idx=st-1, pivot=arr[end];
+    for(int i=st; i<end; i++){
+        if(arr[i]<pivot){
+            idx++;
+            swap(arr[i],arr[idx]);
         }
     }
-
-    swap(&arr[i + 1], &arr[high]);
-    return i + 1;
+    idx++;
+    swap(arr[idx], arr[end]);
+    return idx;
 }
 
-void quickSort(int arr[], int low, int high) {
-    if(low < high) {
-        int pi = partition(arr, low, high);
-
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+void quick_sort(vector<int>& arr, int st, int end){
+    if(st<end){
+        int PI = partition(arr, st, end);
+        quick_sort(arr, st, PI-1);
+        quick_sort(arr, PI+1, end);
     }
+}
+
+void print(vector<int>& arr){
+    for(int i=0; i<arr.size(); i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main(){
+    vector<int> arr = {5,2,6,4,1,3};
+    int n=arr.size()-1;
+    quick_sort(arr, 0, n);
+    print(arr);
+    return 0;
 }
