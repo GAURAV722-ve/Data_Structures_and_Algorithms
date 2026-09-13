@@ -1,22 +1,24 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
-void count_sort(int arr[], int n){
-    int max = arr[0];
+int maxi(int arr[], int n){
+    int m = arr[0];
     for(int i=0; i<n; i++){
-        if(max<arr[i])
-            max = arr[i];
+        if(m<arr[i])
+            m = arr[i];
     }
+    return m;
+}
 
-    int count[max+1] = {0};
-
+void count_sort(int arr[], int n){
+    int max = maxi(arr, n);
+    vector<int> count(max+1,0);
     for(int i=0; i<n; i++){
         count[arr[i]]++;
     }
-
     int idx=0;
-
-    for(int i=0; i<=max; i++){
+    for(int i=0; i<max; i++){
         while(count[i]>0){
             arr[idx] = i;
             idx++;

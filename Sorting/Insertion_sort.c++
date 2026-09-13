@@ -3,15 +3,14 @@ using namespace std;
 
 void insertion_sort(int arr[], int n){
     for(int i=1; i<n; i++){
-        int curr = arr[i];
-        int prev = i-1;  
-        while((arr[prev]>curr) && prev>=0){
-            arr[prev+1] = arr[prev];
-            prev--;
+        int key = arr[i];
+        int j = i-1;
+        while(arr[j]>key && j>=0){
+            arr[j+1]=arr[j];
+            j--;
         }
-        arr[prev+1] = curr;
+        arr[j+1]=key;
     }
-
 }
 
 void print(int arr[], int n){
