@@ -9,8 +9,8 @@ int main(){
     stack<int> s;
     vector<int> ans(arr.size());
 
-    for(int i=arr.size()-1; i>=0; i--){
-        while(s.size()>0 && s.top()<=arr[i]){
+    for(int i=0; i<arr.size(); i++){
+        while(!s.empty() && s.top()>=arr[i]){
             s.pop();
         }
             if(s.empty())
