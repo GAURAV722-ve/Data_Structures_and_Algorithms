@@ -15,7 +15,7 @@ public:
 
 static int idx = -1;
 
-Node* buildTree(vector<int> preorder){
+Node* buildTree(vector<int> preorder){  // O(n).
     idx++;
     if(preorder[idx]==-1) return NULL;
     Node* root = new Node(preorder[idx]);;
@@ -24,11 +24,11 @@ Node* buildTree(vector<int> preorder){
     return root;
 }
 
-void ppreorder(Node* root){
+void ppreorder(Node* root){  // O(n).
     if(root==NULL){
         return ;
     }
-    cout<< root -> data<< endl;
+    cout<< root -> data<<" ";
     ppreorder(root->left);
     ppreorder(root->right);
 }
