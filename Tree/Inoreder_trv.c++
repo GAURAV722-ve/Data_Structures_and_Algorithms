@@ -24,18 +24,18 @@ Node* buildTree(vector<int> preorder){  // O(n).
     return root;
 }
 
-void ppreorder(Node* root){  // O(n).
+void inorder(Node* root){  // O(n).
     if(root==NULL){
         return ;
     }
-    ppreorder(root->left);
+    inorder(root->left);
     cout<< root -> data<<" ";
-    ppreorder(root->right);
+    inorder(root->right);
 }
 
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     Node* root = buildTree(preorder);
-    ppreorder(root);
+    inorder(root);
     return 0;
 }
